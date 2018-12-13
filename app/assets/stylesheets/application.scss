@@ -1,0 +1,30 @@
+@import "bootstrap/dist/css/bootstrap";
+
+body {
+  text-align: center;
+  margin-top:50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.container ul li a {
+  display: block;
+  padding: 0 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.danger {
+  color: white;
+}
+
+.notice {
+  color: white;
+}

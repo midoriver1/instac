@@ -1,0 +1,11 @@
+<h1><%= @user.name %>のページ</h1>
+<p><%= image_tag @user.image, :size => "250x250"%></p>
+<p>メールアドレス: <%= @user.email %></p>
+
+<p><%= link_to 'お気に入り一覧',  users_favorite_path(@user.id) , class: 'btn btn-primary' %></p>
+
+<% @favorites_pictures.each do |favorites_picture| %>
+<%= image_tag favorites_picture.image, :size => "400x250"%>
+<p>本文：<%= favorites_picture.content %></p>
+<p>投稿者：<%= favorites_picture.user.name %></p>
+<% end %>

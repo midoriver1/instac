@@ -1,0 +1,7 @@
+<h1>お気に入り一覧</h1>
+
+<% @favorites_pictures.each do |favorites_picture| %>
+<%= image_tag favorites_picture.image, :size => "400x250"%>
+<p>本文：<%= favorites_picture.content %></p>
+<p>投稿者：<%= favorites_picture.user.name %></p>
+<% end %>

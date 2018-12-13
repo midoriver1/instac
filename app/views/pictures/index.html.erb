@@ -1,0 +1,13 @@
+
+<% @pictures.each do |picture| %>
+  <p><%= image_tag picture.image ,:size => "500x400" %></p>
+  <p><%= picture.content %></p>
+  <%if @current_user.id == picture.user_id%>
+    <p><%= link_to '詳細確認', picture_path(picture.id),class: 'btn btn-primary'%></p>
+    <p><%= link_to "編集", edit_picture_path(picture.id) ,class: 'btn btn-primary'%></p>
+    <p><%= link_to "削除", picture_path(picture.id),method: :delete,data: { confirm: '本当に削除していいですか？' } ,class: 'btn btn-primary'%></p>
+  <% else %>
+    <p><%= link_to '詳細確認', picture_path(picture.id),class: 'btn btn-primary'%></p>
+  <% end %>
+    <p><%= picture.user.name %>の投稿</p>
+<% end %>
