@@ -90,8 +90,8 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'ancient-waters-48574' }
    ActionMailer::Base.delivery_method = :smtp
    ActionMailer::Base.smtp_settings = {
-     user_name: ENV['app119121500@heroku.com'],
-     password: ENV['myqwb8c81633
+     user_name: ENV['SENDGRID_USERNAME'],
+     password: ENV['SENDGRID_PASSWORD
 '],
      domain: "heroku.com",
      address: "smtp.SendGrid.net",
