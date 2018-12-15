@@ -4,7 +4,7 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
-  <%= image_tag @picture.image %>
+  <%= image_tag @picture.image,:size => "250x250" %>
   <p>本文:<%= @picture.content %></p>
   <%= form.submit  "登録する" %>
 <% end %>
