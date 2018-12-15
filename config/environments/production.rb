@@ -88,11 +88,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.action_mailer.default_url_options = { host: 'ancient-waters-48574' }
-   ActionMailer::Base.delivery_method = :smtp
-   ActionMailer::Base.smtp_settings = {
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
      user_name: ENV['SENDGRID_USERNAME'],
-     password: ENV['SENgeDGRID_PASSWORD
-    '],
+     password: ENV['SENDGRID_PASSWORD'],
      domain: "heroku.com",
      address: "smtp.SendGrid.net",
      port: 587,
