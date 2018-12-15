@@ -2,17 +2,13 @@ class UsersController < ApplicationController
   before_action :login_user, only: [ :show, :update, :destroy, :edit]
 
   def new
-    if params[:back]
-      @user = Picture.new(picture_params)
-    else
-      @user = Picture.new
-    end
+    @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(@user.id)
+      redirect_to new_session_path(@user.id), notice: "登録が完了しました。ログインしてください。"
     else
       render 'new'
     end
