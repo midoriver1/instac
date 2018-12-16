@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :login_user, only: [ :show, :update, :destroy, :edit]
+  before_action :ensure_correct_user, only: [ :show, :update, :destroy, :edit]
 
   def new
     @user = User.new
@@ -47,6 +48,14 @@ class UsersController < ApplicationController
   def login_user
     if current_user.nil?
       redirect_to new_session_path, notice: "ログインしてください"
+    end
+  end
+
+  def ensure_correct_user
+    @user = User.find_by(id:params[:id])
+    if @user.id != @current_user.id
+      flash[:notice] = "権限がありません！"
+      redirect_to pictures_path
     end
   end
 
